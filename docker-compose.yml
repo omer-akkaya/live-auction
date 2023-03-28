@@ -1,0 +1,43 @@
+version: "3"
+
+services:
+  client:
+    build: ./client
+    container_name: react-ui
+    expose:
+      - "3000"
+    ports:
+      - "3000:3000"
+    stdin_open: true
+    tty: true
+    depends_on:
+      - backend
+    networks:
+      - main-network
+
+  backend:
+    build: ./server
+    container_name: node-server
+    restart: always
+    ports:
+      - "7000:7000"
+    expose:
+      - "7000"
+    depends_on:
+      - database
+    networks:
+      - main-network
+
+  database:
+    image: mongo
+    container_name: mongo-db
+    ports:
+      - "27017:27017"
+    expose:
+      - "27017"
+    networks:
+      - main-network
+
+networks:
+  main-network:
+    driver: bridge
