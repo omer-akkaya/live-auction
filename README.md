@@ -1,10 +1,4 @@
-# kartaca-auction
-
-This repository includes code for the Kartaca internship task.
-
-Registiration Key: ffbe335e25f742b11e86404f9f58e7c9131872e70b30a11337b5dfe89278723e
-
-Mail adress: farukakkayaya51@gmail.com
+# live-auction
 
 ## Tech Stack
 
